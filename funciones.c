@@ -24,7 +24,7 @@ int fstrings(va_list args)
 }
 /**
  * print_char - print a char
- * @ap: list of args
+ * @args: list of args
  * Return: none
  */
 void print_char(va_list args)
@@ -33,4 +33,19 @@ void print_char(va_list args)
 
 	c = va_arg(args, int);
 	putchar(c);
+}
+/**
+ * print_string - print a string
+ * @args: list of args
+ * Return: none
+ */
+void print_string(va_list args)
+{
+	int i;
+	char *string = va_arg(args, char *);
+
+	for (i = 0; string[i] != '\0'; i++)
+	{
+		putchar(string[i]);
+	}
 }
