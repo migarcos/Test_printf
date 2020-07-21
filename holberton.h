@@ -3,4 +3,6 @@
 
 int _printf(const char *format, ...);
 int fstrings(va_list arguments);
+int _putchar(char c);
+
 #endif

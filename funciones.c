@@ -4,23 +4,33 @@
 
 /**
  * fun-string - print string.
- * @arguments: va_list.
- * Return: String.
+ * @args: argumentos..
+ * Return: string.
  */
-int fstrings(va_list arguments)
+int fstrings(va_list args)
 {
 	char *str;
 	int i = 0;
 
-	str = va_arg(arguments, char *);
+	str = va_arg(args, char *);
 	if (str == NULL)
 	{
 		str = "(null)";
 	}
-	for (; *str; str++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		write(1, &str, 1);
-		i++:
+		_putchar(str[i]);
 	}
-	return (i);
+}
+/**
+ * print_char - print a char
+ * @ap: list of args
+ * Return: none
+ */
+void print_char(va_list args)
+{
+	char c;
+
+	c = va_arg(args, int);
+	putchar(c);
 }
