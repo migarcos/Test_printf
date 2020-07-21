@@ -1,24 +1,39 @@
-#include "holberton.h"
-#include  <stdarg.h>
-
-/**
- * _printf - 0x11 to project
- * @format: format
- * return: 0 all is well, -1 to error on args or format
- * */
-
 int _printf(const char *format, ...)
 {
+
+	op_t fmt[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'\0', NULL},
+	};
+
 	va_list args;
-	char *str;
-	int i = 0;
+	int i, j;
 
-	if (format == NULL)
-		return (-1);
 	va_start(args, format);
-	
-	
+	i = 0;
+	while (format && format[i] != '\0')
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			j = 0;
+			while (fmt[j].op)
+			{
+				if (format[i] == fmt[j].op)
+				{
+					fmt[j].f(args);
+					break;
+				}
+				j++;
+			}
+		}
+		else
+		{
+			_putchar(format[i]);
+		}
+		i++;
+	}
 	va_end(args);
-
 	return (0);
 }
