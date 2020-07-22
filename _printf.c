@@ -5,7 +5,7 @@
 /**
  * _printf - 0x11 to project.
  * @format: format.
- * return: 0 all is well, -1 to error on args or format.
+ * Return: 0 all is well, -1 to error on args or format.
  */
 
 int _printf(const char *format, ...)

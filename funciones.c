@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
- * fun-string - print string.
+ * fstrings - print string.
  * @args: argumentos..
  * Return: none
  */
