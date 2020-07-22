@@ -13,10 +13,14 @@ int fstrings(va_list args)
 	int i = 0;
 
 	str = va_arg(args, char *);
-
-	for (i = 0; str[i] != '\0'; i++)
+	if (str == NULL)
 	{
-		_putchar(str[i]);
+		str = "(null)";
+	}
+	for (; *str; str++)
+	{
+		_putchar(*str);
+		i++;
 	}
 	return (i);
 }
