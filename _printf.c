@@ -38,6 +38,10 @@ int _printf(const char *format, ...)
 				case '%':
 					_putchar('%'), i++;
 					break;
+				case '\0':
+					return (-1);
+				default:
+					_putchar('%'), _putchar(*str), i += 2;
 			}
 		}
 		else
