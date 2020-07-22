@@ -6,9 +6,9 @@
 #include <stdlib.h>
 
 int _printf(const char *format, ...);
-int fstrings(va_list args);
+void fstrings(va_list args);
 int _putchar(char c);
-int print_char(va_list args);
-int print_string(va_list args);
+void print_char(va_list args);
+void print_string(va_list args);
 
 #endif

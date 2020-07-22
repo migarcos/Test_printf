@@ -5,9 +5,9 @@
 /**
  * fun-string - print string.
  * @args: argumentos..
- * Return: string.
+ * Return: none
  */
-int fstrings(va_list args)
+void fstrings(va_list args)
 {
 	char *str;
 	int i = 0;
