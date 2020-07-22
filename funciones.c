@@ -7,33 +7,34 @@
  * @args: argumentos..
  * Return: none
  */
-void fstrings(va_list args)
+int fstrings(va_list args)
 {
 	char *str;
 	int i = 0;
 
 	str = va_arg(args, char *);
-	if (str == NULL)
-	{
-		str = "(null)";
-	}
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
 	}
+	return (i);
 }
+
 /**
  * print_char - print a char
  * @args: list of args
  * Return: none
  */
-void print_char(va_list args)
+int print_char(va_list args)
 {
 	char c;
 
 	c = va_arg(args, int);
 	putchar(c);
+	return (1);
 }
+
 /**
  * print_string - print a string
  * @args: list of args
