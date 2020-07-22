@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 				case 's':
 					i += fstrings(args);
 					break;
+				case 'i':
+				case 'd':
+					i += print_integer(args);
+					break;
 				case '%':
 					_putchar('%'), i++;
 					break;
@@ -46,7 +50,7 @@ int _printf(const char *format, ...)
 		}
 		else
 			_putchar(*str), i++;
-	}
+}
 	va_end(args);
 	return (i);
 }
