@@ -30,10 +30,10 @@ int _printf(const char *format, ...)
 			switch (*++str)
 			{
 				case 'c':
-					i += fstrings(args);
+					i += print_char(args);
 					break;
 				case 's':
-					i += print_char(args);
+					i += fstrings(args);
 					break;
 				case '%':
 					_putchar('%'), i++;
